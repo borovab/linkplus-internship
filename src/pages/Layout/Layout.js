@@ -3,8 +3,7 @@ import { LayoutComp } from '../../components'
 
 const Layout = () => {
   return (
-    <div>
-        
+    <div> 
         <LayoutComp/>
     </div>
   )

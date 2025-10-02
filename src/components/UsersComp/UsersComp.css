@@ -1,0 +1,166 @@
+.users-container {
+  padding: 20px;
+}
+
+.users-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #2d3748;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.users-table th {
+  background: #f7fafc;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.users-table tr:hover {
+  background: #f1f5f9;
+}
+
+.btn-details {
+  padding: 6px 12px;
+  background-color: #3182ce;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn-details:hover {
+  background-color: #2b6cb0;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-export {
+  padding: 8px 14px;
+  background-color: #4a5568;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-export:hover {
+  background-color: #2d3748;
+}
+
+.name-link {
+  text-decoration: none;
+  color: black;
+}
+.name-link:hover {
+  color: grey;
+}
+
+
+@media (max-width: 768px) {
+  .users-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .search-input {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .btn-export {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .users-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto; 
+    border-radius: 6px;
+  }
+
+  .users-table table {
+    min-width: 600px;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
+.sort-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sort-buttons button {
+  padding: 6px 12px;
+  border: 1px solid #cbd5e0;
+  background-color: #f7fafc;
+  color: #2d3748;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.sort-buttons button:hover {
+  background-color: #e2e8f0;
+  border-color: #a0aec0;
+}
+
+.sort-buttons button:active {
+  background-color: #cbd5e0;
+}
+
+.sort-buttons button:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.3);
+}

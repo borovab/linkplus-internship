@@ -1,8 +1,11 @@
 import React from 'react'
+import {UsersComp} from '../../components/index'
 
 const Users = () => {
   return (
-    <div>Users</div>
+    <div>
+      <UsersComp/>
+    </div>
   )
 }
 
