@@ -63,10 +63,18 @@ const AddUserComp = () => {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
-        + Add User
-      </Button>
-
+<Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
+  <Button
+    variant="outlined"
+    color="primary"
+    onClick={() => navigate(-1)}
+  >
+    ← Back
+  </Button>
+  <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
+    + Add User
+  </Button>
+</Box>
       <Dialog open={open} onClose={() => setOpen(false)} maxWidth="lg" fullWidth>
         <DialogTitle>Add New User</DialogTitle>
         <DialogContent dividers>

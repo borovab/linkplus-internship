@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUsers } from "../../context/UsersContext";
 import "./UsersComp.css";
+
+import { Box, Button } from "@mui/material";
 
 const UsersComp = () => {
   const { search, setSearch, filteredUsers, exportToExcel } = useUsers();
   const [sortKey, setSortKey] = useState(null);
-  const [sortDirection, setSortDirection] = useState(null); 
+  const [sortDirection, setSortDirection] = useState(null);
+  const navigate = useNavigate();
+
   const handleSort = (key) => {
     if (sortKey !== key) {
-
       setSortKey(key);
       setSortDirection("asc");
     } else {
-     
       if (sortDirection === "asc") {
         setSortDirection("desc");
       } else if (sortDirection === "desc") {
@@ -45,7 +47,16 @@ const UsersComp = () => {
 
   return (
     <div className="users-container">
-      <h2 className="users-title">Users List</h2>
+      <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => navigate(-1)}
+        >
+          ← Back
+        </Button>
+      </Box>
+        <h2 className="users-title">Users List</h2>
 
       <div className="actions">
         <input
