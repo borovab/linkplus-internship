@@ -1,15 +1,22 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useUsers } from "../../context/UsersContext";
 import "./UsersComp.css";
 
-import { Box, Button } from "@mui/material";
+// loader
+import { Mosaic } from "react-loading-indicators";
 
 const UsersComp = () => {
   const { search, setSearch, filteredUsers, exportToExcel } = useUsers();
   const [sortKey, setSortKey] = useState(null);
   const [sortDirection, setSortDirection] = useState(null);
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // fake loading 1.5 sekonda
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSort = (key) => {
     if (sortKey !== key) {
@@ -45,18 +52,28 @@ const UsersComp = () => {
     });
   }
 
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "50vh",
+        }}
+      >
+        <Mosaic
+          size={100}
+          color="#3182ce"
+          style={{ animation: "fadeColor 2s infinite alternate" }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="users-container">
-      <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={() => navigate(-1)}
-        >
-          ← Back
-        </Button>
-      </Box>
-        <h2 className="users-title">Users List</h2>
+      <h2 className="users-title">Users List</h2>
 
       <div className="actions">
         <input
