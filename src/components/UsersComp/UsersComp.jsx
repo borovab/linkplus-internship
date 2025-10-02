@@ -13,8 +13,7 @@ const UsersComp = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // fake loading 1.5 sekonda
-    const timer = setTimeout(() => setLoading(false), 1500);
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
